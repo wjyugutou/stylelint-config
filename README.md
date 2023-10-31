@@ -17,3 +17,8 @@ pnpm add -D eslint @yugutou/stylelint-config
 }
 ```
 
+### publish newversion
+
+```
+pnpm release x.x.x
+```
