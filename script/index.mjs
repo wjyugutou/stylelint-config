@@ -33,7 +33,7 @@ const compareVersion = function (version1, version2) {
   }
 }
 
-function checkVersion(version) {
+function checkVersion(version, force = false) {
   return new Promise((resolve, reject) => {
     const data = fs.readFileSync('./package.json', 'utf-8')
 
@@ -43,6 +43,9 @@ function checkVersion(version) {
     const packageText = JSON.parse(data)
 
     lastVersion = packageText.version
+
+    if(force)
+      return resolve('success')
 
     if (compareVersion(version, packageText.version) !== 1)
       return reject(new Error(`发布版本号 ${version}小于当前版本 ${packageText.version}`))
@@ -129,11 +132,17 @@ function checkGitStatus() {
 }
 
 async function run() {
-  const version = process.argv[2].replace('--v', '')
-  try {
-    const checkVersionFlag = await checkVersion(version)
+  const version =process.argv.at(-1).replace('--v', '').replace('-v', '')
+  let force = false
 
-    if (checkVersionFlag === 'success') {
+  if (process.argv[2] === '-F' || process.argv[2] === '--force') {
+    force = true
+  }
+
+  try {
+    const checkVersionFlag = await checkVersion(version, force)
+
+    if (checkVersionFlag === 'success' || force) {
       const hasStatus = await checkGitStatus()
       if (hasStatus === 'success') {
         const commitState = await gitCommit(version)

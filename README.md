@@ -19,6 +19,8 @@ pnpm add -D eslint @yugutou/stylelint-config
 
 ### publish newversion
 
+-F || --force 跳过版本检查 用于actions失败后重新发布该版本
+
 ```
 pnpm release x.x.x
 ```
