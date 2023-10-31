@@ -132,7 +132,7 @@ function checkGitStatus() {
 }
 
 async function run() {
-  const version =process.argv.at(-1).replace('--v', '').replace('-v', '')
+  const version = process.argv.at(-1).replace('--v', '').replace('-v', '')
   let force = false
 
   if (process.argv[2] === '-F' || process.argv[2] === '--force') {
