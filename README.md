@@ -6,7 +6,7 @@
 ### Install
 
 ```bash
-pnpm add -D eslint @yugutou/stylelint-config
+pnpm add -D stylelint @yugutou/stylelint-config
 ```
 
 ### Config `.stylelintrc`
