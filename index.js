@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 module.exports = {
   extends: 'stylelint-config-standard', //指定规则扩展
@@ -11,6 +11,12 @@ module.exports = {
     },
   ],
   rules: {
+    'at-rule-no-unknown': [
+      true,
+      {
+        ignoreAtRules: ['apply', '@apply:', 'apply:'],
+      },
+    ],
     'block-no-empty': null,
     'selector-pseudo-class-no-unknown': [
       true,
