@@ -9,6 +9,7 @@ module.exports = {
       files: ['**/*.{vue,html}'],
       customSyntax: 'postcss-html',
     },
+    { 'selector-class-pattern': null },
   ],
   rules: {
     'at-rule-no-unknown': [
