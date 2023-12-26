@@ -22,5 +22,6 @@ pnpm add -D stylelint @yugutou/stylelint-config
 -F || --force 跳过版本检查 用于actions失败后重新发布该版本
 
 ```
-pnpm release x.x.x
+pnpm release x.x.x --desc='xxxxx'
+pnpm release -v='x.x.x' --desc='xxxxx'
 ```

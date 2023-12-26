@@ -12,7 +12,9 @@ module.exports = {
   ],
   rules: {
     'selector-class-pattern': [null],
-
+    'function-no-unknown': [true, {
+      "ignoreFunctions": ["v-bind"]
+    }],
     'at-rule-no-unknown': [
       true,
       {
