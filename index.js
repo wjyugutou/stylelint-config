@@ -18,7 +18,7 @@ module.exports = {
     'at-rule-no-unknown': [
       true,
       {
-        ignoreAtRules: ['apply', '@apply:', 'apply:'],
+        "ignoreAtRules": ["apply", "@apply:", "apply:", "tailwind", "unocss"]
       },
     ],
     'block-no-empty': null,
