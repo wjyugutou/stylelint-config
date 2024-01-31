@@ -93,7 +93,7 @@ function gitPushTag() {
     exec('git tag ', (err, stdout) => {
       if (err)
         return reject(err)
-      if (stdout.includes('1.2.5'))
+      if (stdout.includes(version))
         return reject(new Error(`版本 ${version} 已存在`))
 
       exec('git push ', (err1, stdout, stderr) => {
