@@ -1,6 +1,6 @@
 'use strict'
 
-module.exports = {
+export default {
   extends: 'stylelint-config-standard', //指定规则扩展
   plugins: ['stylelint-order'], //载入插件
   overrides: [
