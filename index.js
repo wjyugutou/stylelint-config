@@ -1,8 +1,6 @@
-'use strict'
-
 export default {
-  extends: 'stylelint-config-standard', //指定规则扩展
-  plugins: ['stylelint-order'], //载入插件
+  extends: 'stylelint-config-standard', // 指定规则扩展
+  plugins: ['stylelint-order'], // 载入插件
   overrides: [
     // 扫描.vue/html文件中的<style>标签内的样式
     {
@@ -11,25 +9,27 @@ export default {
     },
   ],
   rules: {
+    'no-descending-specificity': null,
+    'font-family-no-missing-generic-family-keyword': null,
     'selector-class-pattern': [null],
     'function-no-unknown': [true, {
-      "ignoreFunctions": ["v-bind"]
+      ignoreFunctions: ['v-bind'],
     }],
     'at-rule-no-unknown': [
       true,
       {
-        "ignoreAtRules": ["apply", "@apply:", "apply:", "tailwind", "unocss"]
+        ignoreAtRules: ['apply', '@apply:', 'apply:', 'tailwind', 'unocss'],
       },
     ],
     'block-no-empty': null,
     'selector-pseudo-class-no-unknown': [
       true,
       {
-        ignorePseudoClasses: ['global'],
+        ignorePseudoClasses: ['global', ':deep', 'deep'],
       },
     ],
     'order/properties-order': [
-      //指定css属性顺序，此顺序参考腾讯imweb团队推荐规则
+      // 指定css属性顺序，此顺序参考腾讯imweb团队推荐规则
       'display',
       'visibility',
       'float',
@@ -215,13 +215,13 @@ export default {
       'outline-offset',
       'opacity',
       'filter:progid:DXImageTransform.Microsoft.Alpha(Opacity',
-      "-ms-filter:\\'progid:DXImageTransform.Microsoft.Alpha",
+      '-ms-filter:\\\'progid:DXImageTransform.Microsoft.Alpha',
       '-ms-interpolation-mode',
       '-webkit-box-shadow',
       '-moz-box-shadow',
       'box-shadow',
       'filter:progid:DXImageTransform.Microsoft.gradient',
-      "-ms-filter:\\'progid:DXImageTransform.Microsoft.gradient",
+      '-ms-filter:\\\'progid:DXImageTransform.Microsoft.gradient',
       'text-shadow',
 
       '-webkit-transition',
